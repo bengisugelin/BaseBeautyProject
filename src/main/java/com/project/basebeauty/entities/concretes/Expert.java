@@ -1,82 +1,39 @@
 package com.project.basebeauty.entities.concretes;
 
+
+import jakarta.persistence.*;
+import lombok.*;
+
+@Table(name = "experts")
+@Data
+@AllArgsConstructor
+@Getter
+@Setter
+@NoArgsConstructor
+@Entity
 public class Expert {
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "expert_id")
     private int expertID;
+
+    @Column(name = "expertFirstName")
     private String expertFirstName;
+
+    @Column(name = "expertLastName")
     private String expertLastName;
+
+    @Column(name = "expertPhoneNumber")
     private String expertPhoneNumber;
+
+    @Column(name = "expertEMail")
     private String expertEMail;
+
+    @Column(name = "expertServiceArea")
     private String expertServiceArea; //cruelty-free, acne-prone etc.
+
+    @Column(name = "expertState")
     private boolean expertState; //available (1), not-available(0)
 
-    //dummy constructor
-    public Expert() {
-    }//end of dummy constructor
-
-    public Expert(int expertID, String expertFirstName, String expertLastName, String expertPhoneNumber, String expertEMail, String expertServiceArea, boolean expertState) {
-        this.expertID = expertID;
-        this.expertFirstName = expertFirstName;
-        this.expertLastName = expertLastName;
-        this.expertPhoneNumber = expertPhoneNumber;
-        this.expertEMail = expertEMail;
-        this.expertServiceArea = expertServiceArea;
-        this.expertState = expertState;
-    }//end of constructor
-
-    public int getExpertID() {
-        return expertID;
     }
-
-    public void setExpertID(int expertID) {
-        this.expertID = expertID;
-    }
-
-    public String getExpertFirstName() {
-        return expertFirstName;
-    }
-
-    public void setExpertFirstName(String expertFirstName) {
-        this.expertFirstName = expertFirstName;
-    }
-
-    public String getExpertLastName() {
-        return expertLastName;
-    }
-
-    public void setExpertLastName(String expertLastName) {
-        this.expertLastName = expertLastName;
-    }
-
-    public String getExpertPhoneNumber() {
-        return expertPhoneNumber;
-    }
-
-    public void setExpertPhoneNumber(String expertPhoneNumber) {
-        this.expertPhoneNumber = expertPhoneNumber;
-    }
-
-    public String getExpertEMail() {
-        return expertEMail;
-    }
-
-    public void setExpertEMail(String expertEMail) {
-        this.expertEMail = expertEMail;
-    }
-
-    public String getExpertServiceArea() {
-        return expertServiceArea;
-    }
-
-    public void setExpertServiceArea(String expertServiceArea) {
-        this.expertServiceArea = expertServiceArea;
-    }
-
-    public boolean isExpertState() {
-        return expertState;
-    }
-
-    public void setExpertState(boolean expertState) {
-        this.expertState = expertState;
-    }
-}
