@@ -18,6 +18,9 @@ public class Expert {
     @Column(name = "expert_id")
     private int expertID;
 
+    @Column(name = "expertPassword")
+    private String expertPassword;
+
     @Column(name = "expertFirstName")
     private String expertFirstName;
 
@@ -31,9 +34,12 @@ public class Expert {
     private String expertEMail;
 
     @Column(name = "expertServiceArea")
-    private String expertServiceArea; //cruelty-free, acne-prone etc.
+    private String expertServiceArea; //makeup-skincare etc
 
     @Column(name = "expertState")
     private boolean expertState; //available (1), not-available(0)
+
+    @Column(name = "expertDescription")
+    private String expertDescription;
 
     }

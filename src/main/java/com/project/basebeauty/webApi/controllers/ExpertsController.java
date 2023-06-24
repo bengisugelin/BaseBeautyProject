@@ -22,10 +22,25 @@ public class ExpertsController {
         this.expertService = expertService;
     }
 
-    @GetMapping("/getall")
+    @GetMapping("/getallexperts")
     public List<GetAllExpertsResponse> getAll(){
 
         return expertService.getAll();
+    }
+
+    @GetMapping("/getmakeupexperts")
+    public List<GetAllExpertsResponse> getMakeupExperts() {
+        return expertService.getMakeupExperts();
+    }
+
+    @GetMapping("/getskincareexperts")
+    public List<GetAllExpertsResponse> getSkinCareExperts() {
+        return expertService.getSkinCareExperts();
+    }
+
+    @GetMapping("/getnailcareexperts")
+    public List<GetAllExpertsResponse> getNailCareExperts() {
+        return expertService.getNailCareExperts();
     }
 
     @PostMapping("/add")
