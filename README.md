@@ -4,7 +4,6 @@ This is the repository of CSIS3275 Software Engineering course.
 
 Spring Boot MVC project Structure
 
-![image](https://github.com/bengisugelin/CSIS3275---GroupProject/assets/113550043/2021b1fd-9280-4045-907f-799c3552a2f5)
 
 ```
 ── pom.xml
@@ -67,4 +66,7 @@ Spring Boot MVC project Structure
     │       ├── images
     │       └── styles
 ```
+
+[Group8_Base-Beauty_PROGRESS-REPORT-1.pdf](https://github.com/bengisugelin/BaseBeautyProject/files/11855907/Group8_Base-Beauty_PROGRESS-REPORT-1.pdf)
+
 
