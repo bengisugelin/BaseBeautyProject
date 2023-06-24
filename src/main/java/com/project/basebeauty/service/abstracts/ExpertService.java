@@ -11,11 +11,11 @@ public interface ExpertService {
 
     List<GetAllExpertsResponse> getAll();
 
-     List<GetAllExpertsResponse> getMakeupExperts();
+    List<GetAllExpertsResponse> getMakeupExperts();
 
-    public List<GetAllExpertsResponse> getSkinCareExperts();
+    List<GetAllExpertsResponse> getSkinCareExperts();
 
-    public List<GetAllExpertsResponse> getNailCareExperts();
+    List<GetAllExpertsResponse> getNailCareExperts();
 
     void add(CreateExpertRequests createExpertRequests);
 }
