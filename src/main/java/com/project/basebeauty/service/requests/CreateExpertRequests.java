@@ -11,5 +11,6 @@ public class CreateExpertRequests {
 
     private String expertFirstName;
     private String expertLastName;
-    private String expertServiceArea; //cruelty-free, acne-prone etc.
+    private String expertServiceArea;
+    private String expertDescription;
 }

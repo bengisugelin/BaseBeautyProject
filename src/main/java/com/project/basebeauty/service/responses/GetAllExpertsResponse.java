@@ -12,4 +12,5 @@ public class GetAllExpertsResponse {
     private String expertFirstName;
     private String expertLastName;
     private String expertServiceArea; //cruelty-free, acne-prone etc.
+    private String expertDescription;
 }
