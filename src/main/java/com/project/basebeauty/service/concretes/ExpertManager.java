@@ -15,7 +15,7 @@ import java.util.List;
 @Service  // this class is a business object
 public class ExpertManager implements ExpertService {
 
-    private ExpertRepository expertRepository;
+    private final ExpertRepository expertRepository;
 
    @Autowired
     public ExpertManager(ExpertRepository expertRepository) {
