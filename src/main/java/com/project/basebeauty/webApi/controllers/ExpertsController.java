@@ -11,7 +11,10 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @Controller
-@RequestMapping()
+//activate both of the following annotations for swagger-ui testing
+//@RestController
+//@RequestMapping("/api/experts")
+//-----------------------
 public class ExpertsController {
 
     private ExpertService expertService;
