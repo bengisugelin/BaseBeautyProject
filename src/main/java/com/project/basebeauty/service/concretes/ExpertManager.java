@@ -37,23 +37,24 @@ public class ExpertManager implements ExpertService {
             expertResponse.setExpertLastName(expert.getExpertLastName());
             expertResponse.setExpertServiceArea(expert.getExpertServiceArea());
             expertResponse.setExpertDescription(expert.getExpertDescription());
-            expertResponse.setExpertImage(expert.getExpertImageFilename());
+            expertResponse.setExpertImage(getExpertImageUrl(expert.getExpertImageFilename()));
             expertResponses.add(expertResponse);
         }
         return expertResponses;
     }
 
     @Override
-    public List<GetAllExpertsResponse> getMakeupExperts(){
+    public List<GetAllExpertsResponse> getMakeupExperts() {
         List<Expert> experts = expertRepository.findAll();
-        List<GetAllExpertsResponse> makeupExpertResponse =  new ArrayList<GetAllExpertsResponse>();
+        List<GetAllExpertsResponse> makeupExpertResponse = new ArrayList<>();
         for (Expert expert : experts) {
-            if (expert.getExpertServiceArea().equals("makeup")){
+            if (expert.getExpertServiceArea().equals("makeup")) {
                 GetAllExpertsResponse makeupResponseItem = new GetAllExpertsResponse();
                 makeupResponseItem.setExpertFirstName(expert.getExpertFirstName());
                 makeupResponseItem.setExpertLastName(expert.getExpertLastName());
                 makeupResponseItem.setExpertDescription(expert.getExpertDescription());
                 makeupResponseItem.setExpertServiceArea(expert.getExpertServiceArea());
+                makeupResponseItem.setExpertImage(getExpertImageUrl(expert.getExpertImageFilename()));
                 makeupExpertResponse.add(makeupResponseItem);
             }
         }
@@ -61,16 +62,17 @@ public class ExpertManager implements ExpertService {
     }
 
     @Override
-    public List<GetAllExpertsResponse> getSkinCareExperts(){
+    public List<GetAllExpertsResponse> getSkinCareExperts() {
         List<Expert> experts = expertRepository.findAll();
-        List<GetAllExpertsResponse> skinCareExpertResponse =  new ArrayList<GetAllExpertsResponse>();
+        List<GetAllExpertsResponse> skinCareExpertResponse = new ArrayList<>();
         for (Expert expert : experts) {
-            if (expert.getExpertServiceArea().equals("skincare")){
+            if (expert.getExpertServiceArea().equals("skincare")) {
                 GetAllExpertsResponse skinCareResponseItem = new GetAllExpertsResponse();
                 skinCareResponseItem.setExpertFirstName(expert.getExpertFirstName());
                 skinCareResponseItem.setExpertLastName(expert.getExpertLastName());
                 skinCareResponseItem.setExpertDescription(expert.getExpertDescription());
                 skinCareResponseItem.setExpertServiceArea(expert.getExpertServiceArea());
+                skinCareResponseItem.setExpertImage(getExpertImageUrl(expert.getExpertImageFilename()));
                 skinCareExpertResponse.add(skinCareResponseItem);
             }
         }
@@ -80,18 +82,24 @@ public class ExpertManager implements ExpertService {
     @Override
     public List<GetAllExpertsResponse> getNailCareExperts() {
         List<Expert> experts = expertRepository.findAll();
-        List<GetAllExpertsResponse> nailCareExpertResponse =  new ArrayList<GetAllExpertsResponse>();
+        List<GetAllExpertsResponse> nailCareExpertResponse = new ArrayList<>();
         for (Expert expert : experts) {
-            if (expert.getExpertServiceArea().equals("nailcare")){
+            if (expert.getExpertServiceArea().equals("nailcare")) {
                 GetAllExpertsResponse nailCareResponseItem = new GetAllExpertsResponse();
                 nailCareResponseItem.setExpertFirstName(expert.getExpertFirstName());
                 nailCareResponseItem.setExpertLastName(expert.getExpertLastName());
                 nailCareResponseItem.setExpertDescription(expert.getExpertDescription());
                 nailCareResponseItem.setExpertServiceArea(expert.getExpertServiceArea());
+                nailCareResponseItem.setExpertImage(getExpertImageUrl(expert.getExpertImageFilename()));
                 nailCareExpertResponse.add(nailCareResponseItem);
             }
         }
         return nailCareExpertResponse;
+    }
+
+    private String getExpertImageUrl(String expertImageFilename) {
+        String baseUrl = "http://localhost:8080/api/experts/images/"; // Replace with your actual base URL
+        return baseUrl + expertImageFilename;
     }
 
     @Override
