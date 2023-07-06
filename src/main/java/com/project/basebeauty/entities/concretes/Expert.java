@@ -42,4 +42,11 @@ public class Expert {
     @Column(name = "expertDescription")
     private String expertDescription;
 
+    @Column(name = "expertImageFilename")
+    private String expertImageFilename;
+
+    // Setter method for expertImageFilename
+    public void setExpertImageFilename(String expertImageFilename) {
+        this.expertImageFilename = expertImageFilename;
+    }
     }

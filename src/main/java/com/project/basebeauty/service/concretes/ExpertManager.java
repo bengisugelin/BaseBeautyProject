@@ -6,39 +6,41 @@ import com.project.basebeauty.service.abstracts.ExpertService;
 import com.project.basebeauty.service.requests.CreateExpertRequests;
 import com.project.basebeauty.service.responses.GetAllExpertsResponse;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Service;
+import org.springframework.web.multipart.MultipartFile;
 
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.UUID;
 
-@Service  // this class is a business object
+@Service
 public class ExpertManager implements ExpertService {
 
-    private final ExpertRepository expertRepository;
+    private ExpertRepository expertRepository;
 
-   @Autowired
+    @Autowired
     public ExpertManager(ExpertRepository expertRepository) {
-
-       this.expertRepository = expertRepository;
+        this.expertRepository = expertRepository;
     }
-
 
     @Override
     public List<GetAllExpertsResponse> getAll() {
-        //business rules will be here
         List<Expert> experts = expertRepository.findAll();
-        List<GetAllExpertsResponse> expertResponse =  new ArrayList<GetAllExpertsResponse>();
+        List<GetAllExpertsResponse> expertResponses = new ArrayList<>();
         for (Expert expert : experts) {
-
-            GetAllExpertsResponse responseItem = new GetAllExpertsResponse();
-            responseItem.setExpertFirstName(expert.getExpertFirstName());
-            responseItem.setExpertLastName(expert.getExpertLastName());
-            responseItem.setExpertDescription(expert.getExpertDescription());
-            responseItem.setExpertServiceArea(expert.getExpertServiceArea());
-            expertResponse.add(responseItem);
+            GetAllExpertsResponse expertResponse = new GetAllExpertsResponse();
+            expertResponse.setExpertFirstName(expert.getExpertFirstName());
+            expertResponse.setExpertLastName(expert.getExpertLastName());
+            expertResponse.setExpertServiceArea(expert.getExpertServiceArea());
+            expertResponse.setExpertDescription(expert.getExpertDescription());
+            expertResponse.setExpertImage(expert.getExpertImageFilename());
+            expertResponses.add(expertResponse);
         }
-        return expertResponse;
+        return expertResponses;
     }
 
     @Override
@@ -46,7 +48,6 @@ public class ExpertManager implements ExpertService {
         List<Expert> experts = expertRepository.findAll();
         List<GetAllExpertsResponse> makeupExpertResponse =  new ArrayList<GetAllExpertsResponse>();
         for (Expert expert : experts) {
-
             if (expert.getExpertServiceArea().equals("makeup")){
                 GetAllExpertsResponse makeupResponseItem = new GetAllExpertsResponse();
                 makeupResponseItem.setExpertFirstName(expert.getExpertFirstName());
@@ -56,7 +57,6 @@ public class ExpertManager implements ExpertService {
                 makeupExpertResponse.add(makeupResponseItem);
             }
         }
-
         return makeupExpertResponse;
     }
 
@@ -65,7 +65,6 @@ public class ExpertManager implements ExpertService {
         List<Expert> experts = expertRepository.findAll();
         List<GetAllExpertsResponse> skinCareExpertResponse =  new ArrayList<GetAllExpertsResponse>();
         for (Expert expert : experts) {
-
             if (expert.getExpertServiceArea().equals("skincare")){
                 GetAllExpertsResponse skinCareResponseItem = new GetAllExpertsResponse();
                 skinCareResponseItem.setExpertFirstName(expert.getExpertFirstName());
@@ -75,17 +74,14 @@ public class ExpertManager implements ExpertService {
                 skinCareExpertResponse.add(skinCareResponseItem);
             }
         }
-
         return skinCareExpertResponse;
     }
 
     @Override
     public List<GetAllExpertsResponse> getNailCareExperts() {
-
         List<Expert> experts = expertRepository.findAll();
         List<GetAllExpertsResponse> nailCareExpertResponse =  new ArrayList<GetAllExpertsResponse>();
         for (Expert expert : experts) {
-
             if (expert.getExpertServiceArea().equals("nailcare")){
                 GetAllExpertsResponse nailCareResponseItem = new GetAllExpertsResponse();
                 nailCareResponseItem.setExpertFirstName(expert.getExpertFirstName());
@@ -95,21 +91,58 @@ public class ExpertManager implements ExpertService {
                 nailCareExpertResponse.add(nailCareResponseItem);
             }
         }
-
         return nailCareExpertResponse;
     }
 
-
     @Override
     public void add(CreateExpertRequests createExpertRequests) {
+        String expertFirstName = createExpertRequests.getExpertFirstName();
+        String expertLastName = createExpertRequests.getExpertLastName();
+        String expertServiceArea = createExpertRequests.getExpertServiceArea();
+        String expertDescription = createExpertRequests.getExpertDescription();
+        MultipartFile expertImage = createExpertRequests.getExpertImage();
 
-       Expert expert = new Expert();
-       expert.setExpertFirstName(createExpertRequests.getExpertFirstName());
-       expert.setExpertLastName(createExpertRequests.getExpertLastName());
-       expert.setExpertDescription(createExpertRequests.getExpertDescription());
-       expert.setExpertServiceArea(createExpertRequests.getExpertServiceArea());
+        Expert expert = new Expert();
+        expert.setExpertFirstName(expertFirstName);
+        expert.setExpertLastName(expertLastName);
+        expert.setExpertServiceArea(expertServiceArea);
+        expert.setExpertDescription(expertDescription);
+
+        String expertImageFilename = saveExpertImage(expertImage);
+        expert.setExpertImageFilename(expertImageFilename);
+
+        expertRepository.save(expert);
+    }
+
+    private String saveExpertImage(MultipartFile expertImage) {
+        String expertImageFilename = null;
+        try {
+            // Generate a unique filename or identifier for the image
+            expertImageFilename = generateUniqueFilename();
+
+            // Save the image file to the specified directory
+            String directoryPath = "src/main/resources/images/";
+            Path directory = Paths.get(directoryPath);
+            if (!Files.exists(directory)) {
+                Files.createDirectories(directory);
+            }
+
+            Path imagePath = directory.resolve(expertImageFilename);
+            Files.write(imagePath, expertImage.getBytes());
+
+            // If the image was saved successfully, return the filename
+            return expertImageFilename;
+        } catch (IOException e) {
+            // Handle the exception and return null or throw a custom exception
+            e.printStackTrace();
+        }
+        return expertImageFilename;
+    }
 
 
-        this.expertRepository.save(expert);
+    private String generateUniqueFilename() {
+        // Generate a unique filename or identifier for the image
+        // You can use various methods like UUID.randomUUID() or timestamp-based approaches
+        return UUID.randomUUID().toString() + ".jpg";
     }
 }
