@@ -10,8 +10,8 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
-@RestController
-@RequestMapping("/api/experts")
+@Controller
+@RequestMapping()
 public class ExpertsController {
 
     private ExpertService expertService;
