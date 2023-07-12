@@ -98,7 +98,7 @@ public class ExpertManager implements ExpertService {
     }
 
     private String getExpertImageUrl(String expertImageFilename) {
-        String baseUrl = "http://localhost:8080/api/experts/images/"; // Replace with your actual base URL
+        String baseUrl = "http://localhost:8080/images/"; // Replace with your actual base URL
         return baseUrl + expertImageFilename;
     }
 
@@ -122,6 +122,31 @@ public class ExpertManager implements ExpertService {
         expertRepository.save(expert);
     }
 
+//    private String saveExpertImage(MultipartFile expertImage) {
+//        String expertImageFilename = null;
+//        try {
+//            // Generate a unique filename or identifier for the image
+//            expertImageFilename = generateUniqueFilename();
+//
+//            // Save the image file to the specified directory
+//            String directoryPath = "BaseBeautyProject/src/main/resources/images";
+//            Path directory = Paths.get(directoryPath);
+//            if (!Files.exists(directory)) {
+//                Files.createDirectories(directory);
+//            }
+//
+//            Path imagePath = directory.resolve(expertImageFilename);
+//            Files.write(imagePath, expertImage.getBytes());
+//
+//            // If the image was saved successfully, return the filename
+//            return expertImageFilename;
+//        } catch (IOException e) {
+//            // Handle the exception and return null or throw a custom exception
+//            e.printStackTrace();
+//        }
+//        return expertImageFilename;
+//    }
+
     private String saveExpertImage(MultipartFile expertImage) {
         String expertImageFilename = null;
         try {
@@ -129,7 +154,7 @@ public class ExpertManager implements ExpertService {
             expertImageFilename = generateUniqueFilename();
 
             // Save the image file to the specified directory
-            String directoryPath = "src/main/resources/images/";
+            String directoryPath = "BaseBeautyProject/src/main/resources/images";
             Path directory = Paths.get(directoryPath);
             if (!Files.exists(directory)) {
                 Files.createDirectories(directory);
@@ -138,14 +163,19 @@ public class ExpertManager implements ExpertService {
             Path imagePath = directory.resolve(expertImageFilename);
             Files.write(imagePath, expertImage.getBytes());
 
-            // If the image was saved successfully, return the filename
-            return expertImageFilename;
+            // Build the complete image URL
+            String imageUrl =  expertImageFilename;
+
+            // If the image was saved successfully, return the image URL
+            return imageUrl;
         } catch (IOException e) {
             // Handle the exception and return null or throw a custom exception
             e.printStackTrace();
         }
-        return expertImageFilename;
+        return null;
     }
+
+
 
 
     private String generateUniqueFilename() {
