@@ -5,20 +5,18 @@ import com.project.basebeauty.service.abstracts.ExpertService;
 import com.project.basebeauty.service.requests.CreateExpertRequests;
 import com.project.basebeauty.service.responses.GetAllExpertsResponse;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.MediaType;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.multipart.MultipartFile;
 
 import java.util.List;
 
-@Controller
-//activate both of the following annotations for swagger-ui testing
-//@RestController
-//@RequestMapping("/api/experts")
-//-----------------------
+@RestController
+@RequestMapping("/api/experts")
 public class ExpertsController {
 
     private ExpertService expertService;
-
 
     @Autowired
     public ExpertsController(ExpertService expertService) {
@@ -26,8 +24,7 @@ public class ExpertsController {
     }
 
     @GetMapping("/getallexperts")
-    public List<GetAllExpertsResponse> getAll(){
-
+    public List<GetAllExpertsResponse> getAll() {
         return expertService.getAll();
     }
 
@@ -46,8 +43,16 @@ public class ExpertsController {
         return expertService.getNailCareExperts();
     }
 
-    @PostMapping("/add")
-    public void add(@RequestBody() CreateExpertRequests createExpertRequests){
-        this.expertService.add(createExpertRequests);
+    @PostMapping(value = "/add", consumes = MediaType.MULTIPART_FORM_DATA_VALUE)
+    public void add(@RequestPart("expertImage") MultipartFile expertImage,
+                    @RequestParam("expertFirstName") String expertFirstName,
+                    @RequestParam("expertLastName") String expertLastName,
+                    @RequestParam("expertServiceArea") String expertServiceArea,
+                    @RequestParam("expertDescription") String expertDescription) {
+
+        CreateExpertRequests createExpertRequests = new CreateExpertRequests(expertFirstName, expertLastName,
+                expertServiceArea, expertDescription, expertImage);
+
+        expertService.add(createExpertRequests);
     }
 }
