@@ -154,7 +154,7 @@ public class ExpertManager implements ExpertService {
             expertImageFilename = generateUniqueFilename();
 
             // Save the image file to the specified directory
-            String directoryPath = "BaseBeautyProject/src/main/resources/images";
+            String directoryPath = "C:/Users/Azinm/OneDrive/Desktop/BB backend/BaseBeautyProject/src/main/resources/images";
             Path directory = Paths.get(directoryPath);
             if (!Files.exists(directory)) {
                 Files.createDirectories(directory);
