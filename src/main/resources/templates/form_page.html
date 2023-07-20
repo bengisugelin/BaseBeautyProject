@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Form Input</title>
+</head>
+<body>
+<div class="container">
+    <h1 class="title">Request a session</h1>
+   <div class="card">
+       <form method="post" action="/reservation/reservation_success_page">
+
+            <label for="reservationDate">Reservation Date:</label>
+            <input type="date" name="reservationDate" id="reservationDate" required>
+
+            <label for="reservationTime">Reservation Time:</label>
+            <input type="time" name="reservationTime" id="reservationTime" required>
+
+            <label for="expertServiceArea">Service:</label>
+            <select name="expertServiceArea" id="expertServiceArea" required>
+                <option value="Make up">Make up</option>
+                <option value="Hair Styling">Hair Styling</option>
+                <option value="Skin care">Skin care</option>
+                <option value="Nail">Nail</option>
+                <option value="Others">Others</option>
+            </select>
+            <div class="note">
+            <label for="description">Consultation Details:</label>
+            <textarea name="description" id="description" required></textarea><h6>
+            Please describe your desired treatment and consultation in as much detail as possible.</h6></div>
+
+
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+</div>
+</body>
+</html>
