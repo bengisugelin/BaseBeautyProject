@@ -7,16 +7,23 @@
 <body>
 <div class="container">
   <h1 class="title">Reservation Success</h1>
-  <div class="card">
-    <p>Your reservation has been successfully submitted.</p>
 
-    <p>Reservation Date: <span th:text="${reservationDate}"></span></p>
-    <p>Reservation Time: <span th:text="${reservationTime}"></span></p>
-    <p>Expert Name: <span th:text="${expertName}"></span></p>
-    <p>Expert Service Area: <span th:text="${expertServiceArea}"></span></p>
-    <p>Description: <span th:text="${description}"></span></p>
 
-    <a href="/reservation/form">Modify your reservation</a>
+    <div class="card">
+      <p>Your reservation has been successfully submitted.</p>
+      <h2>Reservation Details:</h2>
+      <p><strong>Reservation Date:</strong> <span th:text="${reservationDate}">Date</span></p>
+      <p><strong>Reservation Time:</strong> <span th:text="${reservationTime}">Time</span></p>
+      <p><strong>Service Area:</strong> <span th:text="${expertServiceArea}">Service Area</span></p>
+      <p><strong>Expert Name:</strong> <span th:text="${expertName}">Expert Name</span></p>
+      <p><strong>Description:</strong> <span th:text="${description}">Description</span></p>
+
+
+    </div>
+
+  <div>
+    <a href="/reservation/form">Modify your schedule</a>
+    <a href="/">Back to home</a>
   </div>
 </div>
 </body>

@@ -26,7 +26,7 @@ public class GlobalExceptionHandler {
 
     public Reservation createReservation(Reservation reservation) {
         try {
-            // データベースへの保存処理
+            // data to database
             return reservationRepository.save(reservation);
         } catch (Exception e) {
             throw new ReservationCreationException("予約の作成中にエラーが発生しました。", e);
