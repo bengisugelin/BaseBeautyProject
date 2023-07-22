@@ -12,14 +12,7 @@ public class BaseBeautyApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(BaseBeautyApplication.class, args);
 	}
-//	@Controller
-//	public static class StaticController {
-//
-//		@RequestMapping({"/", "/{path:^(?!api$|static$).*$}/**"})
-//		public String forward() {
-//			return "forward:/static/index.html";
-//		}
-//	}
+
 
 
 }

@@ -1,23 +1,27 @@
 {
   "files": {
-    "main.css": "/static/css/main.8774de02.css",
-    "main.js": "/static/js/main.0167355d.js",
+    "main.css": "/static/css/main.1ca5ab61.css",
+    "main.js": "/static/js/main.d825ca6f.js",
     "static/media/experts.png": "/static/media/experts.69c35c9bc48bd507cef1.png",
-    "static/media/cartBg.png": "/static/media/cartBg.06acd75d2c63617daab1.png",
     "static/media/Haloween.png": "/static/media/Haloween.8b57926d687efc7f1d45.png",
     "static/media/404bg.jpg": "/static/media/404bg.64c7ebb1b3514043edb9.jpg",
     "static/media/404bg-mobile.jpg": "/static/media/404bg-mobile.7d74152d8cb5f1bb1434.jpg",
     "static/media/firstpic.png": "/static/media/firstpic.48252e7b5e325c2c3ec6.png",
+    "static/media/inquiry-01.png": "/static/media/inquiry-01.a234a6ca64e69b27cb53.png",
+    "static/media/aboutUsLogo-01.png": "/static/media/aboutUsLogo-01.d2d596958b7df9392d95.png",
     "static/media/sigup.jpg": "/static/media/sigup.7c845d27ac7f462888e9.jpg",
     "static/media/siginin.jpg": "/static/media/siginin.4a135dd753ec0c2d03e5.jpg",
+    "static/media/pattern.png": "/static/media/pattern.6006edc41672669bc3ed.png",
     "static/media/logo.svg": "/static/media/logo.d47dd0956d19784ffce0afed5325ba1a.svg",
     "static/media/wlogo.svg": "/static/media/wlogo.1c52911dc34da10460666460828fb78b.svg",
     "static/media/plan-01.svg": "/static/media/plan-01.195865ecbad4edf7725f8efa2f3ae4e9.svg",
     "static/media/plan-03.svg": "/static/media/plan-03.58f673d116ba82e6715c47262f84b90e.svg",
     "static/media/plan-02.svg": "/static/media/plan-02.19e3db084d53f66467d6e2301edfb649.svg",
     "static/media/animation.svg": "/static/media/animation.a66ab6ebafbf2af704fa4be40a7d9ff3.svg",
+    "static/media/inquiry.svg": "/static/media/inquiry.fb354466a9cbc5ffab0f0d16590b448d.svg",
     "static/media/revicons.eot": "/static/media/revicons.a77de540a38981833f9e.eot",
     "static/media/revicons.ttf": "/static/media/revicons.57fd05d4ae650374c8de.ttf",
+    "static/media/AboutUSText-01.svg": "/static/media/AboutUSText-01.2f4f20964e891bf68ad247633f375ac8.svg",
     "static/media/MainText.svg": "/static/media/MainText.204f67a87b1db8f6325715a15c9f2efb.svg",
     "static/media/plansText.svg": "/static/media/plansText.9779bf3b39544a16d140e021351da26a.svg",
     "static/media/expertsText.svg": "/static/media/expertsText.01d957e51d4ae7351c0230c8502db423.svg",
@@ -29,11 +33,11 @@
     "static/media/skinCareExp-01.svg": "/static/media/skinCareExp-01.5ae1820d93f19c3e49cd.svg",
     "static/media/makeupExp-01.svg": "/static/media/makeupExp-01.ca1badae0b7ec8c71864.svg",
     "index.html": "/index.html",
-    "main.8774de02.css.map": "/static/css/main.8774de02.css.map",
-    "main.0167355d.js.map": "/static/js/main.0167355d.js.map"
+    "main.1ca5ab61.css.map": "/static/css/main.1ca5ab61.css.map",
+    "main.d825ca6f.js.map": "/static/js/main.d825ca6f.js.map"
   },
   "entrypoints": [
-    "static/css/main.8774de02.css",
-    "static/js/main.0167355d.js"
+    "static/css/main.1ca5ab61.css",
+    "static/js/main.d825ca6f.js"
   ]
 }
