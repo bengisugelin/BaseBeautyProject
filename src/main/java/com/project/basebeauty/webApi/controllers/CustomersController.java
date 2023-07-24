@@ -12,8 +12,9 @@ import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.*;
 
 @Controller
-@RestController
-@RequestMapping("/api/customers")
+@RequestMapping()
+//@RestController
+//@RequestMapping("/api/customers")
 public class CustomersController {
 //    private CustomerService customerService;
 //    private CustomerRepository customerRepository;
