@@ -1,6 +1,7 @@
-package com.project.basebeauty.dataAccess.abstracts;
+package com.project.basebeauty.exception;
 
 
+import com.project.basebeauty.dataAccess.abstracts.ReservationRepository;
 import com.project.basebeauty.entities.concretes.Reservation;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;

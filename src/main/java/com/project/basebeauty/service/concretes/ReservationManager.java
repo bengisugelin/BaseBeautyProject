@@ -1,6 +1,6 @@
 package com.project.basebeauty.service.concretes;
 
-import com.project.basebeauty.dataAccess.abstracts.ReservationCreationException;
+import com.project.basebeauty.exception.ReservationCreationException;
 import com.project.basebeauty.dataAccess.abstracts.ReservationRepository;
 import com.project.basebeauty.entities.concretes.Reservation;
 import com.project.basebeauty.service.abstracts.ReservationService;

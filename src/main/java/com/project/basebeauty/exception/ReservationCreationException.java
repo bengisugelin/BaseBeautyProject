@@ -1,4 +1,4 @@
-package com.project.basebeauty.dataAccess.abstracts;
+package com.project.basebeauty.exception;
 
 public class ReservationCreationException extends RuntimeException {
     public ReservationCreationException(String message, Exception cause) {
