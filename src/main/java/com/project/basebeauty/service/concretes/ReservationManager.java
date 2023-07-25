@@ -22,14 +22,18 @@ public class ReservationManager implements ReservationService {
         this.reservationRepository = reservationRepository;
     }
 
+
     @Override
-    public Reservation createReservation(Date reservationDate, Time reservationTime, String expertServiceArea, String description, int customerId) {
+    public Reservation createReservation(Date reservationDate, Time reservationTime, String expertServiceArea, String description, Long expertId, int customerId) {
         Reservation reservation = new Reservation();
         reservation.setReservationDate(reservationDate);
         reservation.setReservationTime(reservationTime);
         reservation.setExpertServiceArea(expertServiceArea);
         reservation.setDescription(description);
-        //reservation.setCustomerId(customerId);
+        reservation.setExpertId(expertId);
+        reservation.setCustomerId(customerId);
+
+
 
         try {
             return reservationRepository.save(reservation);
@@ -47,14 +51,15 @@ public class ReservationManager implements ReservationService {
     }
 
 
-}
-
-@ControllerAdvice
-@Component("reservationCreationExceptionHandler")
-class ReservationCreationExceptionHandler {
-    @ExceptionHandler(ReservationCreationException.class)
-    public ResponseEntity<String> handleReservationCreationException(ReservationCreationException ex) {
-        String errorMessage = "Error";
-        return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(errorMessage);
+    @ControllerAdvice
+    @Component("reservationCreationExceptionHandler")
+    static
+    class ReservationCreationExceptionHandler {
+        @ExceptionHandler(ReservationCreationException.class)
+        public ResponseEntity<String> handleReservationCreationException(ReservationCreationException ex) {
+            String errorMessage = "Error";
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(errorMessage);
+        }
     }
 }
+

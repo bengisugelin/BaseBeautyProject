@@ -19,16 +19,17 @@ public class ReservationServiceImpl implements ReservationService {
     }
 
     @Override
-    public Reservation createReservation(Date reservationDate, Time reservationTime, String expertServiceArea, String description, int customerId) {
+    public Reservation createReservation(Date reservationDate, Time reservationTime, String expertServiceArea, String description, Long expertId, int customerId) {
         Reservation reservation = new Reservation();
         reservation.setReservationDate(reservationDate);
         reservation.setReservationTime(reservationTime);
         reservation.setExpertServiceArea(expertServiceArea);
         reservation.setDescription(description);
+        reservation.setExpertId(expertId);
         //reservation.setCustomerId(customerId);
 
         long generatedId = generateRandomId();
-        reservation.setReservationId(generatedId); // ReservationIdを生成
+        reservation.setReservationId(generatedId);
 
         return reservationRepository.save(reservation);
     }

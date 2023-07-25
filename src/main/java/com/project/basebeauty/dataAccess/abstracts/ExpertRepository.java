@@ -8,4 +8,6 @@ import java.util.List;
 @Repository
 public interface ExpertRepository extends JpaRepository<Expert, Integer> {
     //jpaRepository provides methods such as findAll, findAllById, saveAll, deleteAll
+    // Define custom query method to find experts by area of expertise
+    List<Expert> findByExpertServiceArea(String expertServiceArea);
 }

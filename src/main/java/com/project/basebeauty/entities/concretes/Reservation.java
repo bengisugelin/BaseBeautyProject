@@ -19,10 +19,20 @@ public class Reservation {
     @Column(name = "reservation_id")
     private Long reservationId;
 
-    @ManyToOne(fetch = FetchType.LAZY)
+    @Column(name = "expert_id")
+    private Long expertId;
+
+
+
+
+
+    /*@ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "expert_id")
     private Expert expert;
 
+    public void setExpert(Expert expert) {
+        this.expert = expert;}
+*/
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "customer_id")
     private Customer customer;
@@ -41,4 +51,6 @@ public class Reservation {
     private String description;
 
 
+    public void setCustomerId(int customerId) {
+    }
 }
