@@ -15,7 +15,7 @@ public class CustomerManager implements CustomerService {
     }
 
     @Override
-    public Customer registerCustomer(String email, String password, String fname, String lname, String tel) {
+    public Customer registerCustomer(String email, String password, String fname, String lname, String tel, String packageName, int sessionLeft) {
         if(email == null || password == null){
             return null;
         }else{
@@ -25,6 +25,8 @@ public class CustomerManager implements CustomerService {
             newcustomer.setCustomerFirstName(fname);
             newcustomer.setCustomertLastName(lname);
             newcustomer.setCustomerPhoneNumber(tel);
+            newcustomer.setCustomerPackage(packageName);
+            newcustomer.setCustomerSessionLeft(sessionLeft);
             return customerRepository.save(newcustomer);
         }
     }
