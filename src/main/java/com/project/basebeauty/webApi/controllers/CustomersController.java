@@ -12,10 +12,11 @@ import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.*;
 
 @Controller
-@RestController
-@RequestMapping("/api/customers")
+@RequestMapping()
+//@RestController
+//@RequestMapping("/api/customers")
 public class CustomersController {
-//    private CustomerService customerService;
+    //    private CustomerService customerService;
 //    private CustomerRepository customerRepository;
 //
 //    @Autowired
@@ -75,7 +76,7 @@ public class CustomersController {
 //            return "error_page";
 //        }
 //    }
-private CustomerService customerService;
+    private CustomerService customerService;
 
     @Autowired
     public CustomersController(CustomerService customerService) {
@@ -119,7 +120,7 @@ private CustomerService customerService;
 //        }
 //    }
 
-//    @PostMapping("/login")
+    //    @PostMapping("/login")
 //    public ResponseEntity<String> login(
 //            @RequestParam("customerEmail") String customerEmail,
 //            @RequestParam("customerPassword") String customerPassword,
@@ -138,30 +139,35 @@ private CustomerService customerService;
 //            return ResponseEntity.status(HttpStatus.UNAUTHORIZED).build();
 //        }
 //    }
-@PostMapping("/register")
-public ResponseEntity<String> register(
-        @RequestParam("customerEmail") String customerEmail,
-        @RequestParam("customerPassword") String customerPassword,
-        @RequestParam("customerFirstName") String customerFirstName,
-        @RequestParam("customerLastName") String customerLastName,
-        @RequestParam("customerPhoneNumber") String customerPhoneNumber
-) {
-    System.out.println("register request: " + customerEmail);
+    @PostMapping("/register")
+    public ResponseEntity<String> register(
+            @RequestParam("customerEmail") String customerEmail,
+            @RequestParam("customerPassword") String customerPassword,
+            @RequestParam("customerFirstName") String customerFirstName,
+            @RequestParam("customerLastName") String customerLastName,
+            @RequestParam("customerPhoneNumber") String customerPhoneNumber,
+            @RequestParam("customerPackage") String customerPackage,
+            @RequestParam("customerSessionLeft") int customerSessionLeft
+    ) {
+        System.out.println("register request: " + customerEmail);
 
-    Customer registeredCustomer = customerService.registerCustomer(
-            customerEmail,
-            customerPassword,
-            customerFirstName,
-            customerLastName,
-            customerPhoneNumber
-    );
+        Customer registeredCustomer = customerService.registerCustomer(
+                customerEmail,
+                customerPassword,
+                customerFirstName,
+                customerLastName,
+                customerPhoneNumber,
+                customerPackage,
+                customerSessionLeft
 
-    if (registeredCustomer != null) {
-        return ResponseEntity.status(HttpStatus.CREATED).build();
-    } else {
-        return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).build();
+                );
+
+        if (registeredCustomer != null) {
+            return ResponseEntity.status(HttpStatus.CREATED).build();
+        } else {
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).build();
+        }
     }
-}
 
     @PostMapping("/login")
     public ResponseEntity<String> login(
