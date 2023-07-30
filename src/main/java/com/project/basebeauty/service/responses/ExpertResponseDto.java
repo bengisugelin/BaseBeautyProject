@@ -3,12 +3,11 @@ package com.project.basebeauty.service.responses;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import org.springframework.web.multipart.MultipartFile;
 
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class GetAllExpertsResponse {
+public class ExpertResponseDto {
     private Long expertId;
     private String expertImage;
     private String expertFirstName;
