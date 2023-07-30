@@ -10,6 +10,8 @@ public class ReservationRequestDto {
     private String reservationType;
     private String description;
     private MultipartFile imageFile;
+    private String firstName; // New field for first name
+    private String lastName;  // New field for last name
 
     // Constructors, Getters, and Setters...
 
@@ -51,5 +53,21 @@ public class ReservationRequestDto {
 
     public void setImageFile(MultipartFile imageFile) {
         this.imageFile = imageFile;
+    }
+
+    public String getFirstName() {
+        return firstName;
+    }
+
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
+    }
+
+    public String getLastName() {
+        return lastName;
+    }
+
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
     }
 }

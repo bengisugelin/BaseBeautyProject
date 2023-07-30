@@ -49,6 +49,12 @@ public class ReservationController {
             @ApiParam(value = "Description for the reservation", required = true, example = "This is a makeup appointment.")
             @RequestParam("description") String description,
 
+            @ApiParam(value = "First name of the person making the reservation", required = true, example = "John")
+            @RequestParam("firstName") String firstName,
+
+            @ApiParam(value = "Last name of the person making the reservation", required = true, example = "Doe")
+            @RequestParam("lastName") String lastName,
+
             @ApiParam(value = "Image file for the reservation", required = true, example = "sample.jpg")
             @RequestParam("imageFile") MultipartFile imageFile
     ) {
@@ -58,6 +64,8 @@ public class ReservationController {
         requestDto.setReservationType(reservationType);
         requestDto.setDescription(description);
         requestDto.setImageFile(imageFile);
+        requestDto.setFirstName(firstName); // Set the first name
+        requestDto.setLastName(lastName); // Set the last name
 
         Reservation savedReservation = reservationService.saveReservationRequest(requestDto);
 
@@ -93,6 +101,8 @@ public class ReservationController {
         responseDto.setDescription(savedReservation.getDescription());
         responseDto.setImageUrl(savedReservation.getImage());
         responseDto.setExpert(selectedExpert); // Set the expert field with the selected expert
+        responseDto.setFirstName(firstName); // Set the first name in the response
+        responseDto.setLastName(lastName); // Set the last name in the response
 
         return ResponseEntity.ok(responseDto);
     }

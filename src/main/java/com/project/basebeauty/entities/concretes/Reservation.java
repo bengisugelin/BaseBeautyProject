@@ -1,4 +1,3 @@
-
 package com.project.basebeauty.entities.concretes;
 
 import jakarta.persistence.*;
@@ -32,6 +31,12 @@ public class Reservation {
     @ManyToOne
     @JoinColumn(name = "customer_id") // Assuming there's a column named 'customer_id' in the 'reservations' table to store the foreign key
     private Customer customer;
+
+    @Column(name = "first_name") // New field for first name
+    private String firstName;
+
+    @Column(name = "last_name") // New field for last name
+    private String lastName;
 
     // Constructors, Getters, and Setters...
 
@@ -89,5 +94,22 @@ public class Reservation {
 
     public void setCustomer(Customer customer) {
         this.customer = customer;
+    }
+
+    // Getter and Setter methods for first name and last name
+    public String getFirstName() {
+        return firstName;
+    }
+
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
+    }
+
+    public String getLastName() {
+        return lastName;
+    }
+
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
     }
 }

@@ -19,6 +19,24 @@ public class ReservationResponseDto {
     private String description;
     private String imageUrl;
     private GetAllExpertsResponse expert; // Change the type here
+    private String firstName; // New field for first name
+    private String lastName; // New field for last name
 
     // Other getters and setters
+
+    public String getFirstName() {
+        return firstName;
+    }
+
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
+    }
+
+    public String getLastName() {
+        return lastName;
+    }
+
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
+    }
 }
