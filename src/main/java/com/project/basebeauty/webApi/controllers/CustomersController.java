@@ -144,16 +144,32 @@ public ResponseEntity<String> register(
         @RequestParam("customerPassword") String customerPassword,
         @RequestParam("customerFirstName") String customerFirstName,
         @RequestParam("customerLastName") String customerLastName,
-        @RequestParam("customerPhoneNumber") String customerPhoneNumber
+        @RequestParam("customerPhoneNumber") String customerPhoneNumber,
+        @RequestParam("customerPackage") String customerPackage
+
 ) {
     System.out.println("register request: " + customerEmail);
+
+    int customerSessionLeft = 0;
+    if(customerPackage.equals("premium")){
+        customerSessionLeft +=20;
+    }else if (customerPackage.equals("gold")){
+        customerSessionLeft += 15;
+    }else if(customerPackage.equals("bronze")){
+        customerSessionLeft += 10;
+    } else if (customerPackage.equals("basic")) {
+        customerSessionLeft += 5;
+
+    }
 
     Customer registeredCustomer = customerService.registerCustomer(
             customerEmail,
             customerPassword,
             customerFirstName,
             customerLastName,
-            customerPhoneNumber
+            customerPhoneNumber,
+            customerPackage,
+            customerSessionLeft
     );
 
     if (registeredCustomer != null) {
