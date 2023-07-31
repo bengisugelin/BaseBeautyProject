@@ -21,7 +21,7 @@ import java.util.List;
 import java.util.Random;
 
 @RestController
-@RequestMapping("/reservations")
+@RequestMapping("api/reservations")
 @Api(tags = "Reservation API")
 public class ReservationController {
 
