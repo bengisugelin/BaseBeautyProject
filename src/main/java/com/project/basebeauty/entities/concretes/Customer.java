@@ -35,12 +35,6 @@ public class Customer {
     @Column(name = "customerPhoneNumber")
     private String customerPhoneNumber;
 
-    @Column(name = "customerPackage")
-    private String customerPackage;
-
-    @Column(name = "customerSessionLeft")
-    private int customerSessionLeft;
-
 
 
     @Override
@@ -48,26 +42,12 @@ public class Customer {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Customer customer = (Customer) o;
-        return customerID == customer.customerID &&
-                Objects.equals(customerEmail, customer.customerEmail) &&
-                Objects.equals(customerPassword, customer.customerPassword) &&
-                Objects.equals(customerFirstName, customer.customerFirstName) &&
-                Objects.equals(customertLastName, customer.customertLastName) &&
-                Objects.equals(customerPhoneNumber, customer.customerPhoneNumber) &&
-                Objects.equals(customerPackage, customer.customerPackage) &&
-                Objects.equals(customerSessionLeft, customer.customerSessionLeft);
+        return customerID == customer.customerID && Objects.equals(customerEmail, customer.customerEmail) && Objects.equals(customerPassword, customer.customerPassword) && Objects.equals(customerFirstName, customer.customerFirstName) && Objects.equals(customertLastName, customer.customertLastName) && Objects.equals(customerPhoneNumber, customer.customerPhoneNumber);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(customerID,
-                customerEmail,
-                customerPassword,
-                customerFirstName,
-                customertLastName,
-                customerPhoneNumber,
-                customerPackage,
-                customerSessionLeft);
+        return Objects.hash(customerID, customerEmail, customerPassword, customerFirstName, customertLastName, customerPhoneNumber);
     }
 
     @Override
@@ -75,12 +55,9 @@ public class Customer {
         return "Customer{" +
                 "customerID=" + customerID +
                 ", customerEmail='" + customerEmail + '\'' +
-                ", customerPassword='" + customerPassword + '\'' +
                 ", customerFirstName='" + customerFirstName + '\'' +
                 ", customertLastName='" + customertLastName + '\'' +
                 ", customerPhoneNumber='" + customerPhoneNumber + '\'' +
-                ", customerPackage='" + customerPackage + '\'' +
-                ", customerSessionLeft=" + customerSessionLeft +
                 '}';
     }
 }
