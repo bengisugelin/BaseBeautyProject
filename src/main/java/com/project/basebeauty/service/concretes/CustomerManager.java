@@ -15,22 +15,43 @@ public class CustomerManager implements CustomerService {
     }
 
     @Override
-    public Customer registerCustomer(String email, String password, String fname, String lname, String tel) {
-        if(email == null || password == null){
+    public Customer registerCustomer(String email, String password, String fname, String lname, String tel, String customerPackage, int customerSessionLeft) {
+        if (email == null || password == null) {
             return null;
-        }else{
+        } else {
             Customer newcustomer = new Customer();
             newcustomer.setCustomerEmail(email);
             newcustomer.setCustomerPassword(password);
             newcustomer.setCustomerFirstName(fname);
             newcustomer.setCustomertLastName(lname);
             newcustomer.setCustomerPhoneNumber(tel);
+            newcustomer.setCustomerPackage(customerPackage);
+            newcustomer.setCustomerSessionLeft(customerSessionLeft);
             return customerRepository.save(newcustomer);
         }
     }
 
+
     @Override
     public Customer authenticatecustomer(Customer customer) {
-        return customerRepository.findByCustomerEmailAndCustomerPassword(customer.getCustomerEmail(),customer.getCustomerPassword()).orElse(null);
+        return customerRepository.findByCustomerEmailAndCustomerPassword(customer.getCustomerEmail(), customer.getCustomerPassword()).orElse(null);
     }
+
+    public Customer getCustomerById(Customer customer) {
+
+
+        return customerRepository.findCustomerByCustomerEmail(customer.getCustomerEmail()).orElse(null);
+
+    }
+
+    @Override
+    public Customer updatePackageInfo(Customer customer, String customerPackage, int customerSessionLeft) {
+
+        customer.setCustomerPackage(customerPackage);
+        customer.setCustomerSessionLeft(customerSessionLeft);
+        return customerRepository.save(customer);
+
+    }
+
+
 }
