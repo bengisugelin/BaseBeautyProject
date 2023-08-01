@@ -192,7 +192,14 @@ public class CustomersController {
 
         if (authenticated != null) {
             model.put("customerLogin", authenticated.getCustomerEmail());
-            return ResponseEntity.ok("Login successful");
+            return ResponseEntity.ok("{\"Status\" : \"Successful\"," + "\n" +
+                    "\"Userinfo\":{ \"firstname\":" + "\"" + authenticated.getCustomerFirstName() + "\"" +","+
+                    "\"lastname\":" + "\"" + authenticated.getCustomertLastName()+ "\"" + ","+
+                    "\"email\":" + "\"" +  authenticated.getCustomerEmail() +"\"" + ","+
+                    "\"package name\":" + "\"" + authenticated.getCustomerPackage()+"\""+ ","+
+                    "\"session left\":" + "\"" + authenticated.getCustomerSessionLeft() + "\""+ "}" +"\n" +  "}" );
+
+
         } else {
             return ResponseEntity.status(HttpStatus.UNAUTHORIZED).build();
         }
