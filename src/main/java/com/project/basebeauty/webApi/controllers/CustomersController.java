@@ -196,8 +196,8 @@ public class CustomersController {
                     "\"Userinfo\":{ \"firstname\":" + "\"" + authenticated.getCustomerFirstName() + "\"" +","+
                     "\"lastname\":" + "\"" + authenticated.getCustomertLastName()+ "\"" + ","+
                     "\"email\":" + "\"" +  authenticated.getCustomerEmail() +"\"" + ","+
-                    "\"package name\":" + "\"" + authenticated.getCustomerPackage()+"\""+ ","+
-                    "\"session left\":" + "\"" + authenticated.getCustomerSessionLeft() + "\""+ "}" +"\n" +  "}" );
+                    "\"package_name\":" + "\"" + authenticated.getCustomerPackage()+"\""+ ","+
+                    "\"session_left\":" + "\"" + authenticated.getCustomerSessionLeft() + "\""+ "}" +"\n" +  "}" );
 
 
         } else {
@@ -206,19 +206,38 @@ public class CustomersController {
     }
 
     @PostMapping("/getPackageInfo")
-    public void addPackageInfo(@RequestParam("customerEmail") String customerEmail,
-                               @RequestParam("customerPackage") String customerPackage,
-                               @RequestParam("customerSessionLeft") int numberOfSession) {
+    public ResponseEntity<String> addPackageInfo(
+            @RequestParam("customerEmail") String customerEmail,
+            @RequestParam("customerPackage") String customerPackage,
+            @RequestParam("customerSessionLeft") int numberOfSession
+    ) {
         Customer customer = new Customer();
         customer.setCustomerEmail(customerEmail);
         Customer customerSelected = customerService.getCustomerById(customer);
 
-        System.out.println(customerSelected.getCustomerEmail() + customerSelected.getCustomerFirstName());
-        customerSelected.setCustomerPackage(customerPackage);
-        customerSelected.setCustomerSessionLeft(numberOfSession);
+        if (customerSelected != null) {
+            customerSelected.setCustomerPackage(customerPackage);
+            customerSelected.setCustomerSessionLeft(numberOfSession);
 
-        Customer changeCustomerPackageInfo = customerService.updatePackageInfo( customerSelected, customerPackage,numberOfSession );
+            Customer updatedCustomer = customerService.updatePackageInfo(customerSelected, customerPackage, numberOfSession);
 
+            if (updatedCustomer != null) {
+                String responseJson = "{" +
+                        "\"Status\": \"Successful\"," +
+                        "\"Userinfo\": {" +
+                        "\"firstname\": \"" + updatedCustomer.getCustomerFirstName() + "\"," +
+                        "\"lastname\": \"" + updatedCustomer.getCustomertLastName() + "\"," +
+                        "\"email\": \"" + updatedCustomer.getCustomerEmail() + "\"," +
+                        "\"package_name\": \"" + updatedCustomer.getCustomerPackage() + "\"," +
+                        "\"session_left\": \"" + updatedCustomer.getCustomerSessionLeft() + "\"" +
+                        "}" +
+                        "}";
+                return ResponseEntity.ok(responseJson);
+            }
+        }
+
+        return ResponseEntity.status(HttpStatus.UNAUTHORIZED).build();
     }
+
 
 }

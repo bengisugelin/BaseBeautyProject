@@ -13,9 +13,8 @@ import org.springframework.web.multipart.MultipartFile;
 import java.util.List;
 
 @Controller
-@RequestMapping()
-//@RestController
-//@RequestMapping("/api/experts")
+@RestController
+@RequestMapping("/api/experts")
 public class ExpertsController {
 
     private ExpertService expertService;
