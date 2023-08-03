@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/static/css/main.1ca5ab61.css",
-    "main.js": "/static/js/main.ce12def7.js",
+    "main.css": "/static/css/main.bc03b110.css",
+    "main.js": "/static/js/main.45d59ef2.js",
     "static/media/experts.png": "/static/media/experts.69c35c9bc48bd507cef1.png",
     "static/media/Haloween.png": "/static/media/Haloween.8b57926d687efc7f1d45.png",
     "static/media/404bg.jpg": "/static/media/404bg.64c7ebb1b3514043edb9.jpg",
@@ -33,11 +33,11 @@
     "static/media/skinCareExp-01.svg": "/static/media/skinCareExp-01.5ae1820d93f19c3e49cd.svg",
     "static/media/makeupExp-01.svg": "/static/media/makeupExp-01.ca1badae0b7ec8c71864.svg",
     "index.html": "/index.html",
-    "main.1ca5ab61.css.map": "/static/css/main.1ca5ab61.css.map",
-    "main.ce12def7.js.map": "/static/js/main.ce12def7.js.map"
+    "main.bc03b110.css.map": "/static/css/main.bc03b110.css.map",
+    "main.45d59ef2.js.map": "/static/js/main.45d59ef2.js.map"
   },
   "entrypoints": [
-    "static/css/main.1ca5ab61.css",
-    "static/js/main.ce12def7.js"
+    "static/css/main.bc03b110.css",
+    "static/js/main.45d59ef2.js"
   ]
 }
