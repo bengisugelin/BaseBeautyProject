@@ -186,21 +186,96 @@ o	User Engagement: Prioritizing user experience by providing intuitive navigatio
 
 ## 3.2	Architecture of the System
 
+![image](https://github.com/bengisugelin/BaseBeautyProject/assets/113550043/270fba0e-3e86-4419-a573-46f549bb8ed4)
+Figure 3.2.1 Backend and frontend architecture of Base Beauty
+
+## 3.3	Hardware and software configuration of the system
+The hardware and software design of Base Beauty website includes the following components: 
+**3.3.1	Hardware configuration:** 
+       We will set up a dedicated server to host Base Beauty website which provides reliability and    security with powerful processor and memory, along with internal and external storage : 
+o	Multicore processor to handle concurrent requests - Intel (Xeon series) or AMD (EPYC series) 
+o	16-32 GB RAM in order to handle multiple user requests as well as process data efficiently 
+o	GPU – dedicated GPU is not required for our server. 
+o	Power supplies – in order to reduce or eliminate downtime due to power outages, redundant power supply is necessary. 
+o	SSD as an internal storage for faster read/write speeds. 
+o	AWS as external cloud storage if needed. 
+
+
+**3.3.2	Software Configuration** 
+
+o	Backend Framework: We are utilizing Spring Boot framework in adherence to the object-oriented programming principles. Spring Boot’s lightweight and modular design provides clean and maintainable code that follows the SOLID principles. We also incorporated Lombok to simplify the Java pattern and reduce repetitive codes. 
+o	Database Management: Our database system relies on one of the relational database systems, PostgreSQL. PgAdmin is used for the administration and development platform for PostgreSQL. Swagger UI and Postman is used for facilitating easy exploration, testing and understanding of API endpoints and functionalities. 
+o	Dependency Management: Maven is employed as a build automation tool
+o	Templating Engine: Thymeleaf is implemented in our backend development process in order to enable the creation of reusable and dynamic HTML templates and to have easy data binding. 
+o	Frontend Framework: ReactJS is employed to build dynamic and interactive user interfaces and provide excellent user experience. 
+o	Routing: In order to handle navigation and browsing experience within Base Beauty website, React Router is utilized. 
+o	State Management:  For the purpose of storing and persisting data across components, Redux, Redux Toolkit and Redux Persist are used. 
+o	User Interface Design: Material  UI is utilized  for theme design and leveraged it’s pre-build components. SASS were developed to create a unique theme styling 
+o	HTTP Request Handling : As Axios provides efficient communication between frontend and backend, it has been utilized for this purpose. 
 
 
 
+## 3.4	Database design
+
+![image](https://github.com/bengisugelin/BaseBeautyProject/assets/113550043/79cb2d47-215f-4be3-b9db-03a476d803cc)
+Figure 3.4.1 Database design od Base Beauty project
+
+## 3.5	Interface design
+
+![image](https://github.com/bengisugelin/BaseBeautyProject/assets/113550043/7128bf7a-7efc-4e50-934d-d1866a3576d0)
+
+![image](https://github.com/bengisugelin/BaseBeautyProject/assets/113550043/db76910f-65cf-40cd-8b89-ea9dbba1098b)
+
+![image](https://github.com/bengisugelin/BaseBeautyProject/assets/113550043/5bdb7a27-f9af-4e84-80a6-f323917ef3e7)
+
+![image](https://github.com/bengisugelin/BaseBeautyProject/assets/113550043/34b4c91e-85ed-4405-a46e-4253d807d603)
 
 
 
+## 3.6	Achievement of non-functional requirements
+
+ 
+**3.6.1	  User-Friendly and Good User Interface:** 
+A user-friendly and visually appealing interface is essential for providing a better customer experience on the website. Achieving this involves several considerations. We will employ responsive design techniques to ensure optimal display across different devices and screen sizes. User interface elements, such as menus, buttons, and forms, will be designed using best practices for usability and accessibility, including proper contrast, consistent styling, and clear labelling. We should also iteratively refine the user interface based on user feedback during usability testing. Elements such as easy-to-understand menus, logical organization of content, and visually pleasing aesthetics contribute to a positive customer experience.  
+**3.6.2	Reliable Data Storage Solution:** 
+We need a reliable data storage solution to ensure customer information security and prevent information leaks. We will implement security measures like encryption and access controls to protect sensitive customer data. In the same light, implementing a very secure database management system with appropriate authentication and authorisation mechanisms helps safeguard customer information. Encryption techniques, such as SSL/TLS protocols, ensure secure data transmission over the internet. Regular backups of the database will be performed to protect against data loss and provide recovery options in case of system failures.  When we also adhere to data protection regulations applicable in the country, it further enhances customer trust. By prioritising data security and privacy, we can establish a reputation for trustworthiness that leaves our users comfortable with putting out their data.
+**3.6.3	Scalability to Accommodate Growing Users:**
+Ensuring scalability requires careful infrastructure planning and selection. Cloud-based hosting solutions like Amazon Web Services (AWS) offer scalability options. When the website suddenly becomes very popular and gets lots of experts and customers, they can allocate more computing resources to handle the increased traffic. Implementing such auto-scaling features enables the system to automatically adjust resources, such as servers or storage, in response to increasing user load. The site will also be built in a way that it can handle increased traffic and user load without significant performance degradation. By ensuring scalability, the website can handle increasing demand, maintain smooth operations, and avoid potential downtime as the user base expands. 
+**3.6.4	Fast and Responsive System Performance:**
+Real-time interactions between customers and beauty experts require fast and responsive system performance. Backend development will focus on efficient coding practices and minimizing database queries or network requests. Caching mechanisms, such as browser caching, can be implemented to store frequently accessed data or static content, reducing the need for repeated requests. Also, employing content delivery networks (CDNs) will help to distribute content geographically, reducing latency and improving overall system performance. Regular performance testing and optimization efforts are important to identify and address any performance sluggishness. 
+**3.6.5	Integration with 3rd Party Platforms or APIs:**
+APIs provided by social media platforms, payment gateways, and the like should be integrated into the system using appropriate API libraries. Authentication mechanisms, such as OAuth or API keys, can be implemented to communicate with these external services securely. The API documentation and guidelines that the platforms provide will be followed to ensure proper integration. For instance, integrating with popular social media platforms can facilitate easy user registration and sharing of beauty-related content. Incorporating product recommendation APIs can offer personalized suggestions based on customer preferences and improve the shopping experience. By integrating these external platforms or APIs, we can leverage their existing services, expand our functionality, and provide a more comprehensive solution to our users. 
 
 
 
+## 3.7	The revised UML diagrams 
+
+![image](https://github.com/bengisugelin/BaseBeautyProject/assets/113550043/35130207-8e27-49a8-a620-7c3e323aba21)
+Figure 3.7.1 Class diagram of BaseBeauty project
+
+
+# 4.	Implementation
+## 4.1	 Backend Coding
+The backend is designed using the Spring Boot framework, adhering to object-oriented programming principles. The report also covers the database management system, software engineering principles applied, and the structure of the backend codebase.
+
+**4.1.1 Backend Framework: Spring Boot**
+Spring Boot was chosen as the backend framework due to its lightweight, modular design, and extensive support for building enterprise-grade applications. The utilization of Spring Boot enables the team to focus on writing clean and maintainable code that aligns with the SOLID principles of software design. The SOLID principles (Single Responsibility, Open/Closed, Liskov Substitution, Interface Segregation, and Dependency Inversion) ensure a robust, scalable, and flexible backend architecture.
+
+Additionally, Lombok was integrated into the project to simplify Java boilerplate code. With Lombok, the team can use annotations to automatically generate getters, setters, constructors, and other repetitive code, reducing verbosity and improving code readability.
+
+**4.1.2 Database Management: PostgreSQL and PgAdmin**
+The project relies on a relational database system, PostgreSQL, to efficiently store and manage data. PostgreSQL was selected for its reliability, scalability, and support for complex data structures. PgAdmin serves as the administration and development platform for PostgreSQL, allowing easy management of the database, tables, and queries.
 
 
 
+**4.1.3 Backend Code Structure**
+The backend code is organized using a modular approach to promote maintainability and code reusability. The structure comprises the following packages:
 
 
+![image](https://github.com/bengisugelin/BaseBeautyProject/assets/113550043/2f101608-98d6-4e67-8f24-f11417273497)
+Figure 4.1.1 packages, classes and interfaces used in the BaseBeauty project
 
+o	Data Access Package: The Data Access package contains the repositories responsible for interacting with the database. For the “Customer” model, the “CustomerRepository” class, for the “Expert” model, the “ExpertRepository” class, and for the “Reservation” model, the “ReservationRepository” class resides in this package, enabling seamless communication with the PostgreSQL database
 
 
 
