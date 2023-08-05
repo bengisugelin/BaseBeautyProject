@@ -96,6 +96,117 @@ o	Users provide feedback and recommendations for other professionals they intera
 ![image](https://github.com/bengisugelin/BaseBeautyProject/assets/113550043/06fc1010-5ad8-4b59-8b15-88c9ee80bf48)
 
 
+## 2.6	Sequence Diagrams
+
+**2.6.1	Sequence Diagram for login**
+![image](https://github.com/bengisugelin/BaseBeautyProject/assets/113550043/db2fabbb-387f-4004-9348-804c3a7f5c46)
+Figure 2.6.1.1  Sequence diagram for login
+
+**2.6.2	Sequence Diagram for making an appointment**
+
+![image](https://github.com/bengisugelin/BaseBeautyProject/assets/113550043/8a0ad432-c421-4f12-a248-322e153433e0)
+Figure 2.6.2.1 Sequence diagram for making an appointment
+
+**2.6.3	Sequence Diagram for cancelling an appointment**
+![image](https://github.com/bengisugelin/BaseBeautyProject/assets/113550043/6e34abe1-52c2-46ee-a24b-15e18599ae71)
+Figure 2.6.3.1 Sequence diagram for cancelling an appointment
+
+
+## 2.7	Activity Diagrams
+**2.7.1	Login Activity Diagram**
+
+![image](https://github.com/bengisugelin/BaseBeautyProject/assets/113550043/625be4dc-10fe-402b-9bb5-481a805de18d)
+
+**2.7.2	Make an appointment Activity Diagram**
+
+![image](https://github.com/bengisugelin/BaseBeautyProject/assets/113550043/f12a9f83-3fa9-4186-acae-4c42d90826a6)
+
+
+##	State Transition Diagrams
+
+**2.8.1	Purchase package state transition diagram**
+
+![image](https://github.com/bengisugelin/BaseBeautyProject/assets/113550043/c075b08f-335b-4f6e-a5e4-9b002da7191a)
+
+
+**2.8.2	Make Appointment state transition diagram**
+![image](https://github.com/bengisugelin/BaseBeautyProject/assets/113550043/7fb73dec-9f01-4f02-b283-3414e3e85585)
+
+
+# 3.	Design
+## 3.1	Design Goals: 
+ 
+**3.1.1	User Experience (UX):**
+o	Instinctive Interface: Designing a user-friendly interface that allows our users to easily navigate the website and search for experts or fill in an inquiry. 
+o	Providing Clear Information: Using organized content and services to make it easy for users to find the information they need. 
+o	User Research: Doing user research to gain insights into our target audience to improve our current UX and UI. 
+o	Usability and Accessibility: Focusing on designing our website in a way that allows our users to accomplish their goals efficiently and effectively in a short amount of time and with few clicks. 
+o	Responsive and Adaptability: Making our website responsive with most of devices to provide a user-friendly experience for our customers. 
+
+**3.1.2	 User Interface (UI):**
+o	High Quality Visual Design: Choosing color palette, typography and icons based on our users and our brand identity. 
+o	Wire framing: creating a simplified visual representation of our website to show the structural arrangements of our components before investing significant time in detailed design. 
+o	UI Prototyping: Creating an interactive representation of our user interface to show the flow and functionality to solve the issues before moving forward into coding. 
+
+**3.1.3	Functionality:** 
+o	User Registration and Profile: Allowing our users to set up their profile and trach their interactions and changing their basic information. 
+o	Inquiry Submission: Providing user friendly form for users to submit their inquiry in detail to be able to match them with the experts. 
+o	Expert Matching: Providing a list of experts based on their field of expertise. Developing algorithms to match the experts to users based on their needs. 
+o	Providing Communication tools: Implementing a secure way to enable users to interact with the experts. 
+o	Payment Processing: Providing a secure payment gateway to facilitate transactions between users and our website and protecting user’s financial information and providing them with billing information. 
+o	Admin Profile: Developing admin side to be able to register and add new experts 
+ 
+
+ 
+**3.1.4	Performance:** 
+o	Page Load Speed: Aiming to provide a fast loading and smooth and responsive page by optimizing our code and monitoring the test by Google tools like GTmetrix. 
+o	Scalability: Designing and developing the website to handle increased user traffic and usage without significant performance degradation. 
+o	Server Response Time: Ensuring that our server has a quick response to minimize the delays and optimize the server-side code and database queries and network configuration. 
+o	Error Handling: Implementing error handling mechanisms to handle errors and prevent system failures. 
+o	Security and Data Protection: Implementing security to protect our user’s data including	 encryption, authentication and authorization. 
+o	Continuous Testing: Testing our platform regularly to identify our performance problems and optimize our code to improve overall performance. 
+
+**3.1.5	Maintainability:** 
+o	Well-Structured Code: Using best practices in coding and ensuring to use clean, readable and modular code. 
+o	Documentation: Providing comprehensive documentation including Code, Comments, API and User guides. 
+o	Version Control: Utilizing a version control system such as Git to trach changes and collaborate with team members. 
+**3.1.6	Accessibility:** 
+o	Text Alternatives: Providing alternative text for images 
+o	Clear Navigation: Providing a clear and descriptive label for our navigation 
+o	Keyboard Accessibility: Ensuring that all functionality of the website can be accessed and operated by using keyboard alone. 
+**3.1.7	SEO:** 
+o	URL Structure: Using descriptive and rich URLs for each page making it easier for our users to find pages by using search engines. 
+o	Keyword Research: Targeting the keywords that have high search volume and are relevant to our website’s content. 
+o	Site navigation and linking: Using logical and user-friendly site navigation that allows users and search engines to index the website effectively. 
+o	GTmetrix: Using Google speed testing to reach high rank in order to be shown in top  
+o	User Engagement: Prioritizing user experience by providing intuitive navigation, engaging content and clear calls-to actions. 
+
+
+
+
+## 3.2	Architecture of the System
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 # Youtube Link of Video Presentation
 Youtube link of our presentation is located below:
