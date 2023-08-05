@@ -137,48 +137,74 @@ Figure 2.6.3.1 Sequence diagram for cancelling an appointment
 ## 3.1	Design Goals: 
  
 **3.1.1	User Experience (UX):**
-o	Instinctive Interface: Designing a user-friendly interface that allows our users to easily navigate the website and search for experts or fill in an inquiry. 
+
+o	Instinctive Interface: Designing a user-friendly interface that allows our users to easily navigate the website and search for experts or fill in an inquiry.
+
 o	Providing Clear Information: Using organized content and services to make it easy for users to find the information they need. 
+
 o	User Research: Doing user research to gain insights into our target audience to improve our current UX and UI. 
+
 o	Usability and Accessibility: Focusing on designing our website in a way that allows our users to accomplish their goals efficiently and effectively in a short amount of time and with few clicks. 
+
 o	Responsive and Adaptability: Making our website responsive with most of devices to provide a user-friendly experience for our customers. 
 
 **3.1.2	 User Interface (UI):**
 o	High Quality Visual Design: Choosing color palette, typography and icons based on our users and our brand identity. 
+
 o	Wire framing: creating a simplified visual representation of our website to show the structural arrangements of our components before investing significant time in detailed design. 
+
 o	UI Prototyping: Creating an interactive representation of our user interface to show the flow and functionality to solve the issues before moving forward into coding. 
 
 **3.1.3	Functionality:** 
 o	User Registration and Profile: Allowing our users to set up their profile and trach their interactions and changing their basic information. 
+
 o	Inquiry Submission: Providing user friendly form for users to submit their inquiry in detail to be able to match them with the experts. 
+
 o	Expert Matching: Providing a list of experts based on their field of expertise. Developing algorithms to match the experts to users based on their needs. 
+
 o	Providing Communication tools: Implementing a secure way to enable users to interact with the experts. 
+
 o	Payment Processing: Providing a secure payment gateway to facilitate transactions between users and our website and protecting user’s financial information and providing them with billing information. 
+
 o	Admin Profile: Developing admin side to be able to register and add new experts 
  
 
  
 **3.1.4	Performance:** 
 o	Page Load Speed: Aiming to provide a fast loading and smooth and responsive page by optimizing our code and monitoring the test by Google tools like GTmetrix. 
+
 o	Scalability: Designing and developing the website to handle increased user traffic and usage without significant performance degradation. 
+
 o	Server Response Time: Ensuring that our server has a quick response to minimize the delays and optimize the server-side code and database queries and network configuration. 
+
 o	Error Handling: Implementing error handling mechanisms to handle errors and prevent system failures. 
+
 o	Security and Data Protection: Implementing security to protect our user’s data including	 encryption, authentication and authorization. 
+
 o	Continuous Testing: Testing our platform regularly to identify our performance problems and optimize our code to improve overall performance. 
 
 **3.1.5	Maintainability:** 
 o	Well-Structured Code: Using best practices in coding and ensuring to use clean, readable and modular code. 
+
 o	Documentation: Providing comprehensive documentation including Code, Comments, API and User guides. 
+
 o	Version Control: Utilizing a version control system such as Git to trach changes and collaborate with team members. 
+
 **3.1.6	Accessibility:** 
 o	Text Alternatives: Providing alternative text for images 
+
 o	Clear Navigation: Providing a clear and descriptive label for our navigation 
+
 o	Keyboard Accessibility: Ensuring that all functionality of the website can be accessed and operated by using keyboard alone. 
 **3.1.7	SEO:** 
 o	URL Structure: Using descriptive and rich URLs for each page making it easier for our users to find pages by using search engines. 
+
 o	Keyword Research: Targeting the keywords that have high search volume and are relevant to our website’s content. 
+
 o	Site navigation and linking: Using logical and user-friendly site navigation that allows users and search engines to index the website effectively. 
+
 o	GTmetrix: Using Google speed testing to reach high rank in order to be shown in top  
+
 o	User Engagement: Prioritizing user experience by providing intuitive navigation, engaging content and clear calls-to actions. 
 
 
@@ -193,24 +219,38 @@ Figure 3.2.1 Backend and frontend architecture of Base Beauty
 The hardware and software design of Base Beauty website includes the following components: 
 **3.3.1	Hardware configuration:** 
        We will set up a dedicated server to host Base Beauty website which provides reliability and    security with powerful processor and memory, along with internal and external storage : 
+       
 o	Multicore processor to handle concurrent requests - Intel (Xeon series) or AMD (EPYC series) 
+
 o	16-32 GB RAM in order to handle multiple user requests as well as process data efficiently 
+
 o	GPU – dedicated GPU is not required for our server. 
+
 o	Power supplies – in order to reduce or eliminate downtime due to power outages, redundant power supply is necessary. 
+
 o	SSD as an internal storage for faster read/write speeds. 
+
 o	AWS as external cloud storage if needed. 
 
 
 **3.3.2	Software Configuration** 
 
 o	Backend Framework: We are utilizing Spring Boot framework in adherence to the object-oriented programming principles. Spring Boot’s lightweight and modular design provides clean and maintainable code that follows the SOLID principles. We also incorporated Lombok to simplify the Java pattern and reduce repetitive codes. 
+
 o	Database Management: Our database system relies on one of the relational database systems, PostgreSQL. PgAdmin is used for the administration and development platform for PostgreSQL. Swagger UI and Postman is used for facilitating easy exploration, testing and understanding of API endpoints and functionalities. 
+
 o	Dependency Management: Maven is employed as a build automation tool
-o	Templating Engine: Thymeleaf is implemented in our backend development process in order to enable the creation of reusable and dynamic HTML templates and to have easy data binding. 
+
+o	Templating Engine: Thymeleaf is implemented in our backend development process in order to enable the creation of reusable and dynamic HTML templates and to have easy data binding.
+
 o	Frontend Framework: ReactJS is employed to build dynamic and interactive user interfaces and provide excellent user experience. 
+
 o	Routing: In order to handle navigation and browsing experience within Base Beauty website, React Router is utilized. 
+
 o	State Management:  For the purpose of storing and persisting data across components, Redux, Redux Toolkit and Redux Persist are used. 
+
 o	User Interface Design: Material  UI is utilized  for theme design and leveraged it’s pre-build components. SASS were developed to create a unique theme styling 
+
 o	HTTP Request Handling : As Axios provides efficient communication between frontend and backend, it has been utilized for this purpose. 
 
 
