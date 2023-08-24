@@ -1,5 +1,5 @@
 # Base Beauty Project:
-CSIS3275---GroupProject
+## CSIS3275---GroupProject
 This is the repository of CSIS3275 Software Engineering course. 
 
 
