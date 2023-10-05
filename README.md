@@ -1,11 +1,4 @@
 # Base Beauty Project:
-## CSIS3275---GroupProject
-This is the repository of CSIS3275 Software Engineering course. 
-
-
-
-
-![image](https://github.com/bengisugelin/BaseBeautyProject/assets/113550043/75f5406f-5000-4e52-aca7-ad71c98403dd)
 
 # 1. 1.	Project Overview
 ## 1.1	Introduction
